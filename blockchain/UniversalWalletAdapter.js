@@ -7,7 +7,7 @@
  * Supported wallets: Phantom, Solflare, Backpack, Glow, Slope, Trust, Exodus, Ledger, etc.
  */
 
-import { Logger } from '../utils/logger.js';
+import { Logger } from '@/blockchain/utils/logger.js';
 
 const logger = new Logger('UniversalWalletAdapter');
 

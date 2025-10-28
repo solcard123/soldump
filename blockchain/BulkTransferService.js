@@ -1,9 +1,9 @@
 import { PublicKey, ComputeBudgetProgram } from '@solana/web3.js';
-import { SolanaClient } from './SolanaClient.js';
-import { TokenManager } from './TokenManager.js';
-import { TransactionBuilder } from './TransactionBuilder.js';
-import { BatchTransactionManager } from './BatchTransactionManager.js';
-import { Logger } from '../utils/logger.js';
+import { SolanaClient } from '@/blockchain/SolanaClient.js';
+import { TokenManager } from '@/blockchain/TokenManager.js';
+import { TransactionBuilder } from '@/blockchain/TransactionBuilder.js';
+import { BatchTransactionManager } from '@/blockchain/BatchTransactionManager.js';
+import { Logger } from '@/blockchain/utils/logger.js';
 
 /**
  * Bulk Transfer Service - Handles bulk token and SOL transfers

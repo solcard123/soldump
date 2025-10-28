@@ -1,8 +1,8 @@
 import { PublicKey, ComputeBudgetProgram } from '@solana/web3.js';
-import { SolanaClient } from './SolanaClient.js';
-import { TokenManager } from './TokenManager.js';
-import { TransactionBuilder } from './TransactionBuilder.js';
-import { Logger } from '../utils/logger.js';
+import { SolanaClient } from '@/blockchain/SolanaClient.js';
+import { TokenManager } from '@/blockchain/TokenManager.js';
+import { TransactionBuilder } from '@/blockchain/TransactionBuilder.js';
+import { Logger } from '@/blockchain/utils/logger.js';
 
 /**
  * Batch Transaction Manager - Handles transactions in logical batches

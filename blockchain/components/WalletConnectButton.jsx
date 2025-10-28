@@ -1,5 +1,5 @@
 import { useAppKit, useAppKitAccount } from '@reown/appkit/react'
-import './WalletConnectButton.css'
+import '@/blockchain/components/WalletConnectButton.css'
 
 /**
  * Componente de botón para conectar wallets de Solana

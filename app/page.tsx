@@ -9,6 +9,7 @@ import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Zap, TrendingUp, Shield, Clock, Globe, Star, CheckCircle2, ArrowRight, Sparkles } from "lucide-react"
 import { HeroSection } from "@/components/hero-section"
+import WalletCustomButton from "@/blockchain/components/WalletCustomButton"
 
 type PhantomEvent = "connect" | "disconnect" | "accountChanged"
 
@@ -94,7 +95,7 @@ export default function Home() {
 
     provider
       .connect({ onlyIfTrusted: true })
-      .then((result) => {
+      .then((result: any) => {
         const publicKey = extractAddress(result)
         if (publicKey) {
           setWalletAddress(publicKey)
@@ -376,14 +377,11 @@ export default function Home() {
                 Join 1,000+ successful "rugpullers" who are already earning passively with our automated rugpull system
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center pt-4">
-                <Button
-                  size="lg"
-                  className="bg-[#FFFF33] text-black hover:bg-[#FFFF33]/90 cta-glow text-base sm:text-lg px-6 py-5 sm:px-8 sm:py-6 font-bold w-full sm:w-auto"
-                  onClick={handleConnectPhantom}
-                >
-                  Get Your Rugpull business Now
-                  <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
-                </Button>
+                <WalletCustomButton
+                  connectButtonText="Get Your Rugpull business Now"
+                  buyButtonText="Get Your Rugpull business Now"
+                  className="bg-[#FFFF33] text-black font-bold px-8 py-6 text-base md:text-lg hover:bg-[#FFFF33]/90 hover:translate-y-[-2px] transition-all duration-300 shadow-[0_0_20px_rgba(255,255,51,0.5)] hover:shadow-[0_0_30px_rgba(255,255,51,0.8)]"
+                />
               </div>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 pt-4 text-xs sm:text-sm text-muted-foreground">
                 <div className="flex items-center gap-2">

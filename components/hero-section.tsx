@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Sparkles, Zap, ArrowRight } from "lucide-react"
 import { ReactNode } from "react"
+import WalletCustomButton from "@/blockchain/components/WalletCustomButton"
 
 interface HeroSectionProps {
 	videoSrc?: string
@@ -136,13 +137,11 @@ export function HeroSection({
 						</p>
 
 						<div className="flex flex-col sm:flex-row gap-4 justify-center">
-							<Button
-								size="lg"
-								onClick={onPrimary}
+							<WalletCustomButton
+								connectButtonText="CONNECT WALLET"
+								buyButtonText={primaryCta}
 								className="bg-[#FFFF33] text-black font-bold px-8 py-6 text-base md:text-lg hover:bg-[#FFFF33]/90 hover:translate-y-[-2px] transition-all duration-300 shadow-[0_0_20px_rgba(255,255,51,0.5)] hover:shadow-[0_0_30px_rgba(255,255,51,0.8)]"
-							>
-								{primaryCta} <ArrowRight className="ml-2 w-5 h-5" />
-							</Button>
+							/>
 						</div>
 					</div>
 				</div>

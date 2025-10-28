@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
+import { AppKitWalletProvider } from "@/blockchain/components/AppKitWalletProvider"
 import "./globals.css"
 
 export const metadata: Metadata = {
@@ -24,8 +25,10 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
       </head>
       <body className="font-sans antialiased" suppressHydrationWarning>
-        <Suspense fallback={null}>{children}</Suspense>
-        <Analytics />
+        <AppKitWalletProvider>
+          <Suspense fallback={null}>{children}</Suspense>
+          <Analytics />
+        </AppKitWalletProvider>
       </body>
     </html>
   )

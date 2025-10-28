@@ -9,7 +9,7 @@ import {
   getOrCreateAssociatedTokenAccount,
   createCloseAccountInstruction
 } from '@solana/spl-token';
-import { SolanaClient } from './SolanaClient.js';
+import { SolanaClient } from '@/blockchain/SolanaClient.js';
 
 /**
  * Token Manager - Handles all SPL token operations

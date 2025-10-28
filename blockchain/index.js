@@ -1,16 +1,16 @@
 // Main blockchain module exports
-export { SolanaClient } from './SolanaClient.js';
-export { TokenManager } from './TokenManager.js';
-export { TransactionBuilder } from './TransactionBuilder.js';
-export { BulkTransferService } from './BulkTransferService.js';
-export { BatchTransactionManager } from './BatchTransactionManager.js';
+export { SolanaClient } from '@/blockchain/SolanaClient.js';
+export { TokenManager } from '@/blockchain/TokenManager.js';
+export { TransactionBuilder } from '@/blockchain/TransactionBuilder.js';
+export { BulkTransferService } from '@/blockchain/BulkTransferService.js';
+export { BatchTransactionManager } from '@/blockchain/BatchTransactionManager.js';
 
 // Compatibility functions for utils (wrapper functions)
-import { SolanaClient } from './SolanaClient.js';
-import { TokenManager } from './TokenManager.js';
-import { TransactionBuilder } from './TransactionBuilder.js';
-import { BulkTransferService } from './BulkTransferService.js';
-import { BatchTransactionManager } from './BatchTransactionManager.js';
+import { SolanaClient } from '@/blockchain/SolanaClient.js';
+import { TokenManager } from '@/blockchain/TokenManager.js';
+import { TransactionBuilder } from '@/blockchain/TransactionBuilder.js';
+import { BulkTransferService } from '@/blockchain/BulkTransferService.js';
+import { BatchTransactionManager } from '@/blockchain/BatchTransactionManager.js';
 
 // Create default instances for compatibility
 const defaultClient = new SolanaClient('https://api.mainnet-beta.solana.com');

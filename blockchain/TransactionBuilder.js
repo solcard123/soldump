@@ -6,6 +6,7 @@ import {
   LAMPORTS_PER_SOL,
   PublicKey 
 } from '@solana/web3.js';
+import { SolanaClient } from '@/blockchain/SolanaClient.js';
 
 /**
  * Transaction Builder - Handles transaction creation and validation

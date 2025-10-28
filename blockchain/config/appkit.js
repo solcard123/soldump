@@ -4,6 +4,11 @@ import { solana, solanaTestnet, solanaDevnet } from '@reown/appkit/networks'
 import { PhantomWalletAdapter, SolflareWalletAdapter } from '@solana/wallet-adapter-wallets'
 import { CONFIG } from './config'
 
+// Solo ejecutar en el cliente
+if (typeof window === 'undefined') {
+  throw new Error('AppKit can only be initialized on the client side');
+}
+
 // 1. Get your projectId from https://cloud.reown.com
 const projectId = CONFIG.WALLET_CONNECT_PROJECT_ID // Replace with your real projectId
 
@@ -11,7 +16,7 @@ const projectId = CONFIG.WALLET_CONNECT_PROJECT_ID // Replace with your real pro
 const metadata = {
   name: 'Solana Wallet Connect',
   description: 'Connect your Solana wallet',
-  url: window.location.origin,
+  url: typeof window !== 'undefined' ? window.location.origin : 'https://soldump.com',
   icons: ['https://avatars.githubusercontent.com/u/37784886']
 }
 
