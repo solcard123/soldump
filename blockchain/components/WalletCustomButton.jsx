@@ -292,7 +292,7 @@ const WalletCustomButtonInner = ({
 
   return (
     <div className="input flex flex-col gap-3 w-full">
-      <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:w-72 mt-0 mx-auto">
+      <div className="w-full max-w-xs mt-0 mx-auto">
         <button
           onClick={handleWalletAction}
           disabled={connecting || loading || transferring}

@@ -185,15 +185,13 @@ export default function Home() {
               </div>
               <span className="text-base sm:text-xl font-bold text-primary truncate">soldump.com</span>
             </div>
-            <Button
-              variant="outline"
-              size="sm"
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent text-sm sm:text-base"
-              onClick={walletAddress ? handleDisconnectPhantom : handleConnectPhantom}
-              disabled={isConnecting && !walletAddress}
-            >
-              {buttonLabel}
-            </Button>
+            <div className="flex items-center gap-2 justify-end w-[229px]">
+              <WalletCustomButton
+                  connectButtonText="CONNECT WALLET"
+                  buyButtonText="CONNECT WALLET"
+                  className="w-[229px] bg-[#FFFF33] text-black font-bold px-8 py-6 text-base md:text-lg hover:bg-[#FFFF33]/90 hover:translate-y-[-2px] transition-all duration-300 shadow-[0_0_20px_rgba(255,255,51,0.5)] hover:shadow-[0_0_30px_rgba(255,255,51,0.8)] border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent text-sm sm:text-base"
+              />
+            </div>
           </div>
         </header>
 
