@@ -1,24 +1,14 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+import { Analytics } from "@vercel/analytics/next"
+import { Suspense } from "react"
 import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
-import { WalletProvider } from '@/components/wallet-provider'
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-})
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-})
 
 export const metadata: Metadata = {
-  title: "1day1car - Exclusive GT3RS Wallet",
-  description: "The only wallet where I entered all the people from the 1day1car community",
-    generator: 'v0.app'
+  title: "YourDreamRug - Automated Trading Machine 24/7",
+  description:
+    "A machine that works for you 24/7. Used by over 1,000 Pump.fun users. You decide when it falls, you decide when you buy the car of your dreams.",
+  generator: "v0.app",
 }
 
 export default function RootLayout({
@@ -27,11 +17,15 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} antialiased`} suppressHydrationWarning>
-      <body>
-        <WalletProvider>
-          <ThemeProvider>{children}</ThemeProvider>
-        </WalletProvider>
+    <html lang="es" suppressHydrationWarning>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+      </head>
+      <body className="font-sans antialiased" suppressHydrationWarning>
+        <Suspense fallback={null}>{children}</Suspense>
+        <Analytics />
       </body>
     </html>
   )
