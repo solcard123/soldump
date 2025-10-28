@@ -3,17 +3,16 @@
 import { FuzzyText } from "@/components/fuzzy-text"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Sparkles, Zap, ArrowRight, PlayCircle } from "lucide-react"
+import { Sparkles, Zap, ArrowRight } from "lucide-react"
 import { ReactNode } from "react"
 
 interface HeroSectionProps {
 	videoSrc?: string
+	imageSrc?: string
 	/** Texto CTA principal */
 	primaryCta?: string
 	/** Acción al pulsar CTA principal */
 	onPrimary?: () => void
-	secondaryCta?: string
-	onSecondary?: () => void
 	tagline?: ReactNode
 	youtubeVideoId?: string
 }
@@ -28,10 +27,9 @@ interface HeroSectionProps {
  */
 export function HeroSection({
 	videoSrc,
-	primaryCta = "Start Your Machine",
-	secondaryCta = "Watch Demo",
+	imageSrc,
+	primaryCta = "CONNECT WALLET",
 	onPrimary,
-	onSecondary,
 	tagline = (
 		<>
 			Only available until <span className="font-semibold text-primary">December 11th</span>
@@ -67,7 +65,7 @@ export function HeroSection({
 								enableHover={false}
 								className="neon-glow block"
 							>
-								A machine that works
+								The ultimate rugpull machine
 							</FuzzyText>
 							<FuzzyText
 								fontSize="clamp(2rem, 4vw, 2.5rem)"
@@ -78,7 +76,7 @@ export function HeroSection({
 								enableHover={false}
 								className="neon-glow block -mt-2"
 							>
-								for you 24/7
+								Working for you 24/7
 							</FuzzyText>
 						</div>
 					</div>
@@ -86,13 +84,17 @@ export function HeroSection({
 					{/* Video centrado en grande */}
 					<div className="relative w-full max-w-[1000px]">
 						<div className="relative group w-full aspect-[16/9] rounded-3xl overflow-hidden neon-frame before:content-[''] before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,51,0.15),transparent_60%)]">
-							{videoSrc ? (
+							{imageSrc ? (
+								<img
+									src={imageSrc}
+									alt="Rugpull Machine"
+									className="absolute inset-0 w-full h-full object-contain opacity-90"
+								/>
+							) : videoSrc ? (
 								<video
 									src={videoSrc}
 									autoPlay
-									loop
 									muted
-									playsInline
 									className="absolute inset-0 w-full h-full object-cover opacity-90"
 								/>
 							) : youtubeVideoId ? (
@@ -130,8 +132,7 @@ export function HeroSection({
 					{/* Contenido abajo del video */}
 					<div className="text-center space-y-6 max-w-2xl">
 						<p className="text-lg md:text-xl text-muted-foreground/90 leading-relaxed">
-							Configure it once, let it execute opportunities autonomously. Automated trading technology with
-							<span className="text-primary font-semibold"> ultra-fast</span> and stable approach.
+							Set it up once, run the rugpull machine, and start dumping all kinds of memecoins with 1 click
 						</p>
 
 						<div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -142,26 +143,6 @@ export function HeroSection({
 							>
 								{primaryCta} <ArrowRight className="ml-2 w-5 h-5" />
 							</Button>
-							<Button
-								size="lg"
-								variant="outline"
-								onClick={onSecondary}
-								className="border-2 border-[#FFFF33] text-[#FFFF33] hover:bg-[#FFFF33] hover:text-black font-medium px-8 py-6 text-base md:text-lg relative group transition-all duration-300 shadow-[0_0_15px_rgba(255,255,51,0.3)] hover:shadow-[0_0_25px_rgba(255,255,51,0.6)]"
-							>
-								<PlayCircle className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" /> {secondaryCta}
-							</Button>
-						</div>
-
-						{/* Elementos informativos */}
-						<div className="flex items-center justify-center gap-6 text-xs md:text-sm text-muted-foreground">
-							<div className="flex items-center gap-2">
-								<Zap className="w-4 h-4 text-primary" />
-								<span>Latency-optimized</span>
-							</div>
-							<div className="flex items-center gap-2">
-								<span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-								<span>Live monitoring</span>
-							</div>
 						</div>
 					</div>
 				</div>

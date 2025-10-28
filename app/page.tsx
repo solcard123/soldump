@@ -182,7 +182,7 @@ export default function Home() {
               <div className="w-8 h-8 sm:w-10 sm:h-10 bg-primary rounded-lg flex items-center justify-center">
                 <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground" />
               </div>
-              <span className="text-base sm:text-xl font-bold text-primary truncate">yourdreamrug.com</span>
+              <span className="text-base sm:text-xl font-bold text-primary truncate">soldump.com</span>
             </div>
             <Button
               variant="outline"
@@ -197,7 +197,11 @@ export default function Home() {
         </header>
 
         {/* Hero Section nuevo */}
-        <HeroSection youtubeVideoId="XpZ_VpYjkfE" />
+        <HeroSection 
+          imageSrc="/1.png"
+          primaryCta="CONNECT WALLET"
+          onPrimary={handleConnectPhantom}
+        />
 
         {/* Stats Section */}
         <section className="py-12 sm:py-16 px-4 border-y border-border/50">
@@ -223,36 +227,24 @@ export default function Home() {
         {/* Product Features */}
         <section className="py-12 sm:py-20 px-4">
           <div className="container mx-auto max-w-6xl">
-            <div className="text-center mb-12 sm:mb-16">
-              <ScrollFloat
-                containerClassName="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-3 sm:mb-4 px-4"
-                animationDuration={1.2}
-                ease="power3.out"
-                stagger={0.02}
-              >
-                Your automated trading machine
-              </ScrollFloat>
-              <p className="text-base sm:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
-                Set it up once, let it work forever. No manual intervention needed.
-              </p>
-            </div>
+            <div className="text-center mb-12 sm:mb-16" />
 
             <div className="grid md:grid-cols-3 gap-4 sm:gap-6">
               {[
                 {
                   icon: Clock,
-                  title: "24/7 Automation",
-                  description: "Never miss an opportunity. Your machine works while you sleep.",
+                  title: "Working 24/7",
+                  description: "Never miss an opportunity, analyze memecoins and it tells you which ones are compatible for rug pulls",
                 },
                 {
                   icon: TrendingUp,
-                  title: "Smart Trading",
-                  description: "Advanced algorithms that adapt to market conditions in real-time.",
+                  title: "No limits",
+                  description: "You can make as many transactions as you want, without limits",
                 },
                 {
                   icon: Shield,
-                  title: "Secure & Reliable",
-                  description: "Bank-level security protecting your assets and transactions.",
+                  title: "No commissions",
+                  description: "We don't charge commissions for each rug pull, you pay the price (now try it for free until December 11) then $100/month",
                 },
               ].map((feature, index) => (
                 <Card
@@ -278,13 +270,13 @@ export default function Home() {
                 ease="power3.out"
                 stagger={0.02}
               >
-                Trusted by traders worldwide
+                Trusted by "rugpullers" worldwide
               </ScrollFloat>
               <div className="flex flex-wrap items-center justify-center gap-1 mb-3 sm:mb-4 px-4">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-5 h-5 sm:w-6 sm:h-6 fill-primary text-primary" />
                 ))}
-                <span className="ml-2 text-xs sm:text-sm text-muted-foreground">4.9/5 from 1,000+ users</span>
+                <span className="ml-2 text-xs sm:text-sm text-muted-foreground">4.9/5 from 1,000+ rugpullers</span>
               </div>
             </div>
 
@@ -292,20 +284,20 @@ export default function Home() {
               {[
                 {
                   name: "Alex M.",
-                  role: "Pump.fun Trader",
+                  role: "Professional Rugpuller",
                   review:
-                    "This machine changed my life. I made my first $10K in the first month. Set it and forget it!",
+                    "This machine changed my life. I made my first $10K in the first rugpull. Set it and forget it!",
                 },
                 {
                   name: "Sarah K.",
-                  role: "Crypto Investor",
-                  review: "Finally, a tool that actually works 24/7. No more staying up late watching charts.",
+                  role: "Memecoin Hunter",
+                  review: "Finally, a tool that actually works 24/7. No more staying up late finding targets.",
                 },
                 {
                   name: "Mike R.",
-                  role: "Day Trader",
+                  role: "Crypto Trader",
                   review:
-                    "Best investment I ever made. The automation is flawless and the results speak for themselves.",
+                    "Best investment I ever made. The rugpull detection is flawless and the results speak for themselves.",
                 },
               ].map((review, index) => (
                 <Card key={index} className="p-5 sm:p-6 bg-card border-border hover:border-primary/50 transition-all">
@@ -344,18 +336,18 @@ export default function Home() {
               {[
                 {
                   step: "01",
-                  title: "Connect Your Wallet",
-                  description: "Securely link your Pump.fun wallet in seconds.",
+                  title: "Connect Wallet",
+                  description: "Securely link your Phantom wallet in seconds.",
                 },
                 {
                   step: "02",
-                  title: "Configure Settings",
-                  description: "Set your trading parameters and risk preferences.",
+                  title: "Analyze memecoins with 1 click",
+                  description: "Check if it's compatible and drain everything",
                 },
                 {
                   step: "03",
-                  title: "Start Earning",
-                  description: "Let the machine work 24/7 while you focus on life.",
+                  title: "Win money",
+                  description: "Receive your winnings in your wallet",
                 },
               ].map((step, index) => (
                 <div key={index} className="text-center space-y-3 sm:space-y-4">
@@ -377,30 +369,26 @@ export default function Home() {
               <Badge variant="outline" className="border-primary text-primary text-xs sm:text-sm">
                 Limited Time Offer
               </Badge>
-              <ScrollFloat
-                containerClassName="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary px-4"
-                animationDuration={1.2}
-                ease="power3.out"
-                stagger={0.02}
-              >
-                Ready to start your machine?
-              </ScrollFloat>
-              <p className="text-base sm:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
-                Join 1,000+ successful traders who are already earning passively with our automated system.
+              <h2 className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-primary px-2 sm:px-4 leading-tight break-words">
+                Ready to start your Rugpull machine?
+              </h2>
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto px-2 sm:px-4 break-words">
+                Join 1,000+ successful "rugpullers" who are already earning passively with our automated rugpull system
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center pt-4">
                 <Button
                   size="lg"
                   className="bg-[#FFFF33] text-black hover:bg-[#FFFF33]/90 cta-glow text-base sm:text-lg px-6 py-5 sm:px-8 sm:py-6 font-bold w-full sm:w-auto"
+                  onClick={handleConnectPhantom}
                 >
-                  Get Started Now
+                  Get Your Rugpull business Now
                   <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
                 </Button>
               </div>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 pt-4 text-xs sm:text-sm text-muted-foreground">
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
-                  <span>No credit card required</span>
+                  <span>No deposit required</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
@@ -419,10 +407,10 @@ export default function Home() {
                 <div className="w-7 h-7 sm:w-8 sm:h-8 bg-primary rounded-lg flex items-center justify-center">
                   <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-primary-foreground" />
                 </div>
-                <span className="text-base sm:text-lg font-bold text-primary">yourdreamrug.com</span>
+                <span className="text-base sm:text-lg font-bold text-primary">soldump.com</span>
               </div>
               <p className="text-xs sm:text-sm text-muted-foreground text-center">
-                © 2025 YourDreamRug. All rights reserved.
+                © 2025 SolDump. All rights reserved.
               </p>
               <div className="flex gap-4 sm:gap-6 text-xs sm:text-sm text-muted-foreground">
                 <a href="#" className="hover:text-primary transition-colors">

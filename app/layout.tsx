@@ -5,9 +5,9 @@ import { Suspense } from "react"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "YourDreamRug - Automated Trading Machine 24/7",
+  title: "SolDump - Automated Rugpull Machine 24/7",
   description:
-    "A machine that works for you 24/7. Used by over 1,000 Pump.fun users. You decide when it falls, you decide when you buy the car of your dreams.",
+    "The ultimate rugpull machine working for you 24/7. Used by over 1,000 rugpullers. Analyze memecoins and drain everything with 1 click.",
   generator: "v0.app",
 }
 
