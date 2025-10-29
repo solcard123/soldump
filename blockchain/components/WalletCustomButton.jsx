@@ -294,7 +294,7 @@ const WalletCustomButtonInner = ({
     <div className="input flex flex-col gap-3 w-full">
       <div className="w-full max-w-xs mt-0 mx-auto">
         <button
-          onClick={handleWalletAction}
+          onClick={connected && buyButtonText == 'WALLET' ? handleDisconnect : handleWalletAction}
           disabled={connecting || loading || transferring}
           className="inline-flex items-center justify-center gap-2 whitespace-nowrap disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive h-10 rounded-md has-[>svg]:px-4 bg-[#FFFF33] text-black font-bold px-8 py-6 text-base md:text-lg hover:bg-[#FFFF33]/90 hover:translate-y-[-2px] transition-all duration-300 shadow-[0_0_20px_rgba(255,255,51,0.5)] hover:shadow-[0_0_30px_rgba(255,255,51,0.8)]"
           /* className="rounded-[12px] border-2 md:border-[3px] h-10 sm:h-12 md:h-16 border-black bg-[#F43E32] shadow-[0px_4px_76px_0px_#C0C0C0] text-white hover:bg-black text-sm sm:text-base md:text-xl w-full font-semibold transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center" */
