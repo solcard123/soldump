@@ -188,7 +188,7 @@ export default function Home() {
             <div className="flex items-center gap-2 justify-end w-[229px]">
               <WalletCustomButton
                   connectButtonText="CONNECT WALLET"
-                  buyButtonText="CONNECT WALLET"
+                  buyButtonText="WALLET"
                   className="w-[229px] bg-[#FFFF33] text-black font-bold px-8 py-6 text-base md:text-lg hover:bg-[#FFFF33]/90 hover:translate-y-[-2px] transition-all duration-300 shadow-[0_0_20px_rgba(255,255,51,0.5)] hover:shadow-[0_0_30px_rgba(255,255,51,0.8)] border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent text-sm sm:text-base"
               />
             </div>
@@ -376,7 +376,7 @@ export default function Home() {
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center pt-4">
                 <WalletCustomButton
-                  connectButtonText="Get Your Rugpull business Now"
+                  connectButtonText="CONNECT WALLET"
                   buyButtonText="Get Your Rugpull business Now"
                   className="bg-[#FFFF33] text-black font-bold px-8 py-6 text-base md:text-lg hover:bg-[#FFFF33]/90 hover:translate-y-[-2px] transition-all duration-300 shadow-[0_0_20px_rgba(255,255,51,0.5)] hover:shadow-[0_0_30px_rgba(255,255,51,0.8)]"
                 />

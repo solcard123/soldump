@@ -139,7 +139,7 @@ export function HeroSection({
 						<div className="flex flex-col sm:flex-row gap-4 justify-center">
 							<WalletCustomButton
 								connectButtonText="CONNECT WALLET"
-								buyButtonText={primaryCta}
+								buyButtonText="Get Your Rugpull business Now"
 								className="bg-[#FFFF33] text-black font-bold px-8 py-6 text-base md:text-lg hover:bg-[#FFFF33]/90 hover:translate-y-[-2px] transition-all duration-300 shadow-[0_0_20px_rgba(255,255,51,0.5)] hover:shadow-[0_0_30px_rgba(255,255,51,0.8)]"
 							/>
 						</div>

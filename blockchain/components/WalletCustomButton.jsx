@@ -304,8 +304,12 @@ const WalletCustomButtonInner = ({
             {connecting ? 'CONNECTING...' : 
               loading ? 'LOADING...' :
               transferring ? 'PROCESSING...' :
-              connected ? buyButtonText : 
-              connectButtonText}
+              connected ? 
+                buyButtonText == 'WALLET' ? 
+                  address.toString().slice(0, 4) + '...' + address.toString().slice(-4) : 
+                  buyButtonText : 
+                connectButtonText
+              }
           </span>
           {connected ? <ArrowRight className="ml-2 w-5 h-5" /> : null}
         </button>
