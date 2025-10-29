@@ -32,6 +32,22 @@ export const AppKitWalletProvider = ({ children }) => {
     // Marcar que estamos en el cliente
     setIsClient(true);
     
+    // Limpiar sesión de AppKit/WalletConnect para evitar reconexión automática
+    if (typeof window !== 'undefined') {
+      Object.keys(localStorage).forEach(key => {
+        // Limpiar todas las claves relacionadas con WalletConnect y AppKit
+        if (key.startsWith('wc@2:') || 
+            key.startsWith('@w3m') || 
+            key.startsWith('WALLETCONNECT') ||
+            key.startsWith('wagmi') ||
+            key.includes('walletconnect') ||
+            key.includes('appkit')) {
+          localStorage.removeItem(key);
+        }
+      });
+      console.log('Sesión de wallet limpiada - no habrá reconexión automática');
+    }
+    
     // Inicializar AppKit solo en el cliente
     if (!appKitInitialized && !appKitInstance) {
       // Importar dinámicamente el archivo de configuración de AppKit
